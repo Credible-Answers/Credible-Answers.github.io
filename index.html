@@ -96,6 +96,9 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 /* TEAM */
 .team-sub-label{font-size:.7rem;font-family:var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.4rem;margin-bottom:3rem}
+.team-row{display:flex;flex-wrap:wrap;gap:1.4rem;margin-bottom:2.5rem}
+.team-row .team-card{flex:0 0 240px;max-width:240px}
+@media(max-width:720px){.team-row .team-card{flex:1 1 100%;max-width:none}}
 .team-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;cursor:default}
 .team-card:hover{border-color:#aaa;transform:translateY(-3px)}
 .team-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;display:block;background:#f0eeea}
@@ -413,7 +416,7 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
   <p class="sec-sub">Led by Clément de Chaisemartin at Sciences Po, maintained by predoctoral research fellows funded by the ERC Really Credible grant.</p>
 
   <p class="team-sub-label">Principal Investigator</p>
-  <div class="team-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin-bottom:2.5rem">
+  <div class="team-row">
     <div class="team-card">
       <img class="team-photo" src="figures/Clément.png" alt="Clément de Chaisemartin"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
@@ -429,16 +432,16 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
     </div>
   </div>
 
-<p class="team-sub-label">Main Collaborator</p>
-  <div class="team-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin-bottom:2.5rem">
+  <p class="team-sub-label">Main Collaborator</p>
+  <div class="team-row">
     <div class="team-card">
       <img class="team-photo" src="figures/photo-X-scaled (1).jpg" alt="Xavier D'Haultfoeuille"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="team-placeholder" style="display:none">C</div>
+      <div class="team-placeholder" style="display:none">X</div>
       <div class="team-body">
         <div class="team-name">Xavier D'Haultfoeuille</div>
         <div class="team-role">Main Collaborator</div>
-        <div class="team-affil">CREST<div>
+        <div class="team-affil">CREST</div>
         <div class="team-links">
           <a class="team-link" href="https://faculty.crest.fr/xdhaultfoeuille/" target="_blank">Website</a>
         </div>
@@ -446,9 +449,8 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
     </div>
   </div>
 
-  
   <p class="team-sub-label">Current Predocs</p>
-  <div class="team-grid">
+  <div class="team-row">
     <div class="team-card">
       <img class="team-photo" src="figures/anzony.png" alt="Anzony Quispe"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
@@ -477,7 +479,7 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
     </div>
   </div>
 
-  <p class="team-sub-label" style="margin-top:1.5rem">Alumni</p>
+  <p class="team-sub-label">Alumni</p>
   <div class="team-grid">
 
     <div class="team-card" style="opacity:.84">
@@ -557,6 +559,7 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 
 <!-- FOOTER -->
 <footer style="border-top:1px solid var(--border);padding:2.2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+  <img src="figures/HE logo.png" alt="Funded by the European Union" style="height:56px;width:auto;flex-shrink:0"/>
   <span style="font-family:var(--serif);font-size:1rem;color:var(--accent)">Credible Answers</span>
   <ul style="display:flex;gap:1.4rem;list-style:none">
     <li><a href="https://github.com/Credible-Answers" target="_blank" style="text-decoration:none;font-size:.8rem;color:var(--muted)">GitHub</a></li>
@@ -564,7 +567,7 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
     <li><a href="https://github.com/Credible-Answers/ReplicationPackages" target="_blank" style="text-decoration:none;font-size:.8rem;color:var(--muted)">Replications</a></li>
     <li><a href="/cdn-cgi/l/email-protection#b4d7dcd5ddc7d1d9d5c6c0ddda9ac4d5d7dfd5d3d1c7f4d3d9d5ddd89ad7dbd9" style="text-decoration:none;font-size:.8rem;color:var(--muted)">Contact</a></li>
   </ul>
-  <span style="font-size:.72rem;color:var(--muted)">Funded by the European Union (ERC, REALLYCREDIBLE,GA N°101043899). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</span>
+  <span style="font-size:.72rem;color:var(--muted);flex-basis:100%">Funded by the European Union (ERC, REALLYCREDIBLE,GA N°101043899). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</span>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>

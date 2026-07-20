@@ -26,8 +26,12 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,246,242,.93);backdrop-
 .nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center}
 .nav-links a{text-decoration:none;color:var(--muted);font-size:.875rem;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
+.nav-toggle{display:none;border:1px solid var(--accent-border);background:var(--accent-light);color:var(--accent);border-radius:4px;padding:.36rem .65rem;font-family:var(--sans);font-size:.78rem;font-weight:600;cursor:pointer}
+.nav-toggle:hover{background:#dce9e2}
 .btn-nav{background:var(--accent);color:#fff!important;padding:.38rem .95rem;border-radius:4px;font-size:.8rem!important;font-weight:600!important}
 .btn-nav:hover{opacity:.85}
+.btn-nav-secondary{color:var(--accent)!important;border:1px solid var(--accent-border);background:var(--accent-light);padding:.34rem .85rem;border-radius:4px;font-size:.8rem!important;font-weight:600!important;white-space:nowrap}
+.btn-nav-secondary:hover{background:#dce9e2;color:var(--accent)!important}
 
 /* HERO */
 .hero{max-width:860px;margin:0 auto;padding:6rem 2rem 4.5rem;text-align:center;animation:fadeUp .7s ease both}
@@ -116,9 +120,25 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .fade-in{opacity:1;transform:none}
 @media(max-width:720px){
-  nav{padding:0 1.2rem}
+  nav{padding:.6rem 1.2rem;height:auto;min-height:62px;flex-wrap:wrap}
+  .nav-toggle{display:block}
+  .nav-links{display:none;flex:1 0 100%;flex-direction:column;align-items:stretch;gap:.25rem;padding:.65rem 0 .25rem}
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;width:100%;padding:.45rem .65rem;border-radius:4px}
+  .nav-links a:not(.btn-nav):not(.btn-nav-secondary):hover{background:var(--surface)}
+  .btn-nav,.btn-nav-secondary{text-align:center}
   .mission{grid-template-columns:1fr;padding:2rem;margin:0 1rem 3rem}
   .team-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+}
+@media(max-width:900px){
+  .nav-links{gap:.55rem}
+}
+@media(max-width:480px){
+  nav{padding:.6rem .75rem}
+  .nav-logo{font-size:1rem}
+  .nav-links a{font-size:.72rem}
+  .btn-nav,.btn-nav-secondary{font-size:.68rem!important;padding:.3rem .55rem}
 }
 </style>
 </head>
@@ -127,12 +147,14 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">Credible Answers</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu ☰</button>
+  <ul class="nav-links" id="primary-navigation">
     <li><a href="#packages">Packages</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#" style="opacity:.5;cursor:default;pointer-events:none">DiD Book</a></li>
     <li><a href="https://credible-answers.github.io/did_multiplegt_dyn_tutorial/" target="_blank">Tutorial</a></li>
-    <li><a class="btn-nav" href="https://github.com/Credible-Answers" target="_blank">GitHub ↗</a></li>
+    <li class="nav-action"><a class="btn-nav-secondary" href="https://credible-answers.github.io/evstplot/" target="_blank">Event-study collection ↗</a></li>
+    <li class="nav-action"><a class="btn-nav" href="https://github.com/Credible-Answers" target="_blank">GitHub ↗</a></li>
   </ul>
 </nav>
 
@@ -596,6 +618,29 @@ async function updateGitHubMetrics() {
 }
 
 updateGitHubMetrics();
+
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+function closeNavigation() {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.textContent = 'Menu ☰';
+}
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.textContent = isOpen ? 'Close ×' : 'Menu ☰';
+});
+
+navLinks.addEventListener('click', event => {
+  if (event.target.closest('a') && window.innerWidth <= 720) closeNavigation();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeNavigation();
+});
 
 const obs = new IntersectionObserver(
   es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') }),

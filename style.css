@@ -126,14 +126,9 @@ footer img{height:56px;width:auto;flex-shrink:0}
 .hero.landing{padding:6.5rem 2rem 2rem}
 .hero.landing p{margin:0 auto 2.75rem}
 .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem;max-width:1160px;margin:0 auto;padding:0 2rem 7rem;animation:fadeUp .7s .1s ease both}
-.act{position:relative;display:flex;align-items:center;justify-content:center;gap:.45rem;min-height:54px;padding:.8rem 1.1rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);text-decoration:none;font-weight:500;font-size:.9rem;line-height:1.25;text-align:center;white-space:nowrap;min-width:150px;box-shadow:0 1px 2px rgba(26,26,24,.04);transition:border-color .2s,color .2s,box-shadow .2s,transform .15s}
-.act:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 6px 18px -8px rgba(26,74,58,.35);transform:translateY(-2px)}
-.act .arr{font-size:.8rem;opacity:.55;transition:transform .2s,opacity .2s}
-.act:hover .arr{opacity:1;transform:translate(2px,-2px)}
-.act.internal:hover .arr{transform:translateX(3px)}
-.act.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
-.act.primary:hover{color:#fff;opacity:.92}
-.act.soon{color:var(--muted);background:transparent;box-shadow:none;pointer-events:none;border-style:dashed}
-.act .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;background:#efede7;color:var(--muted);padding:.12rem .4rem;border-radius:100px}
+.act{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:54px;min-width:150px;padding:.8rem 1.4rem;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;line-height:1.25;text-align:center;white-space:nowrap;box-shadow:0 1px 2px rgba(26,26,24,.06);transition:background .2s,box-shadow .2s,transform .15s}
+.act:hover{background:#143a2e;box-shadow:0 8px 20px -10px rgba(26,74,58,.6);transform:translateY(-2px)}
+.act.soon{opacity:.55;box-shadow:none;pointer-events:none}
+.act .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.18);color:#fff;padding:.12rem .45rem;border-radius:100px}
 @media(max-width:1100px){.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:620px}.actions .act:first-child{grid-column:1/-1}}
 @media(max-width:480px){.actions{grid-template-columns:1fr;padding:0 1rem 5rem}}

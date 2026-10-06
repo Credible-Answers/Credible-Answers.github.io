@@ -7,6 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css"/>
+<style>
+/* Landing buttons: 3 + 3 grid, equal widths */
+.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;max-width:820px;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}
+.actions .act{display:flex;align-items:center;justify-content:center;gap:.4rem;text-align:center;width:100%;min-height:3.2rem}
+@media(max-width:720px){.actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.actions{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <nav class="nav-home">
@@ -25,12 +32,12 @@
 
   <div class="actions">
     <a class="act" href="https://credible-answers.github.io/Which-Difference-in-Differences-estimator-should-I-use/" target="_blank">Which DiD should I use?</a>
-    <a class="act internal" href="team.html">Team</a>
+    <a class="act internal" href="packages.html">Our Packages</a>
+    <a class="act" href="https://credible-answers.github.io/did_multiplegt_dyn_tutorial/" target="_blank">did_multiplegt_dyn Tutorial</a>
     <!-- DiD Book: when live, set href to the book URL, remove "soon" and the tag, add target="_blank" -->
     <a class="act soon" href="#">DiD Textbook <span class="tag">Soon</span></a>
     <a class="act" href="https://credible-answers.github.io/evstplot/" target="_blank">Event-study collection</a>
-    <a class="act internal" href="packages.html">Our Packages</a>
-    <a class="act" href="https://credible-answers.github.io/did_multiplegt_dyn_tutorial/" target="_blank">did_multiplegt_dyn Tutorial</a>
+    <a class="act internal" href="team.html">Team</a>
   </div>
 
 </main>

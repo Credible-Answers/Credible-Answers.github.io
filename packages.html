@@ -253,7 +253,7 @@ function filterPackages(lang) {
 }
 btns.forEach(b => b.addEventListener('click', () => filterPackages(b.dataset.filter)));
 const h = location.hash.replace('#', '');
-if (['stata', 'r', 'py'].includes(h)) filterPackages(h);
+if (['stata', 'r', 'py', 'julia'].includes(h)) filterPackages(h);
 
 // Copy buttons: copy exactly what is displayed
 document.querySelectorAll('.snippet-copy').forEach(btn => {

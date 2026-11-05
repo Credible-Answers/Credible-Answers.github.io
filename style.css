@@ -65,7 +65,7 @@ section{max-width:1080px;margin:0 auto;padding:3rem 2rem 5rem}
 .lang-pill.stata{background:#e8edf8;color:#2a4aaa}
 .lang-pill.r{background:#fde8ef;color:#a01848}
 .lang-pill.py{background:#e8f4e8;color:#186818}
-.lang-pill.julia { background: #9558B2; color: #fff; }
+.lang-pill.julia{background:#f1e8f6;color:#7a3a9a}
 .pkg-desc{font-size:.85rem;color:var(--muted);line-height:1.65;flex:1}
 .pkg-desc a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 .install-snippets{display:flex;flex-direction:column;gap:.4rem;margin-top:.2rem}

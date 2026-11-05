@@ -35,6 +35,7 @@
     <button type="button" data-filter="stata">Stata</button>
     <button type="button" data-filter="r">R</button>
     <button type="button" data-filter="py">Python</button>
+    <button type="button" data-filter="julia">Julia</button>
   </div>
 
   <div class="pkg-grid">
@@ -109,12 +110,11 @@
       </div>
       <div class="lang-row"><span class="lang-pill stata">Stata</span><span class="lang-pill r">R</span><span class="lang-pill py">Python</span><span class="lang-pill julia">Julia</span></div>
       <p class="pkg-desc">Computes the implicit weights attached to two-way fixed effects regressions, as well as summary measures of these regressions' robustness to heterogeneous treatment effects. Based on <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20181169" target="_blank">de Chaisemartin and D'Haultfoeuille (2020)</a>.</p>
-     <div class="install-snippets">
+      <div class="install-snippets">
         <div class="snippet"><span class="snippet-lang">Stata</span><span class="snippet-cmds"><span class="snippet-cmd">ssc install twowayfeweights</span></span><button class="snippet-copy" aria-label="Copy">⎘</button></div>
         <div class="snippet"><span class="snippet-lang">R</span><span class="snippet-cmds"><span class="snippet-cmd">install.packages("TwoWayFEWeights")</span></span><button class="snippet-copy" aria-label="Copy">⎘</button></div>
         <div class="snippet"><span class="snippet-lang">Python</span><span class="snippet-cmds"><span class="snippet-cmd">pip install git+https://github.com/Credible-Answers/py_twowayfeweights</span></span><button class="snippet-copy" aria-label="Copy">⎘</button></div>
         <div class="snippet"><span class="snippet-lang">Julia</span><span class="snippet-cmds"><span class="snippet-cmd">using Pkg; Pkg.add("TwoWayFEWeights")</span></span><button class="snippet-copy" aria-label="Copy">⎘</button></div>
-        <div class="snippet"><span class="snippet-lang">Julia</span><span class="snippet-cmds"><span class="snippet-cmd">using TwoWayFEWeights</span><span class="snippet-cmd">twowayfeweights(data = df, Y = "outcome", G = "group", T = "time", D = "treatment", type = "feTR")</span></span><button class="snippet-copy" aria-label="Copy">⎘</button></div>
       </div>
       <div class="pkg-footer" data-github-repo="Credible-Answers/twowayfeweights">
         <span data-github-metric="stars">★ 32</span><span data-github-metric="forks">⑂ 5</span>
